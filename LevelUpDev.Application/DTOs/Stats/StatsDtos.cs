@@ -12,7 +12,7 @@ public record UserStatsDto(
     ProblemStatsDto ProblemStats,
     StreakStatsDto StreakStats,
     ContestStatsDto ContestStats,
-    List<QuestProgressDto> QuestProgress,
+    List<UserQuestProgressDto> QuestProgress,
     WeeklyStatsDto WeeklyStats,
     GamificationStatsDto GamificationStats
 );
@@ -60,9 +60,9 @@ public record ContestStatsDto(
 );
 
 /// <summary>
-/// DTO for quest progress.
+/// DTO for quest progress within user stats.
 /// </summary>
-public record QuestProgressDto(
+public record UserQuestProgressDto(
     string QuestType,
     int CurrentLevel,
     int TotalLevels,
@@ -121,7 +121,7 @@ public record PersonalAnalyticsDashboardDto(
     UserStatsDto Stats,
     List<ActivitySummaryDto> RecentActivity,
     List<LeaderboardPositionDto> LeaderboardPositions,
-    List<QuestProgressDto> QuestProgress,
+    List<UserQuestProgressDto> QuestProgress,
     StreakAnalyticsDto StreakAnalytics,
     List<BadgeProgressDto> BadgeProgress
 );
