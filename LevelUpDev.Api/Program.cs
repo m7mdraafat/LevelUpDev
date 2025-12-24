@@ -72,11 +72,13 @@ builder.Services.AddHealthChecks();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// Enable Swagger in all environments for now (disable in production later)
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "LevelUpDev API v1");
+    // In production, you might want to set RoutePrefix = "" to make swagger the default page
+});
 
 // Use custom middleware
 app.UseMiddleware<RequestLoggingMiddleware>();
