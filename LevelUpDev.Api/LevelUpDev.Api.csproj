@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.56.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LevelUpDev.Application\LevelUpDev.Application.csproj" />
     <ProjectReference Include="..\LevelUpDev.Infrastructure\LevelUpDev.Infrastructure.csproj" />
   </ItemGroup>
 
