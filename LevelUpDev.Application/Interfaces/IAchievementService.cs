@@ -1,4 +1,4 @@
-using LevelUpDev.Application.DTOs.Users;
+using LevelUpDev.Application.DTOs.Achievements;
 using LevelUpDev.Domain.Common;
 using LevelUpDev.Domain.Enums;
 
@@ -12,21 +12,21 @@ public interface IAchievementService
     /// <summary>
     /// Gets all achievements for a user.
     /// </summary>
-    Task<Result<List<BadgeDto>>> GetByUserIdAsync(
+    Task<Result<List<AchievementDto>>> GetByUserIdAsync(
         string userId,
         CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Gets unlocked achievements for a user.
     /// </summary>
-    Task<Result<List<BadgeDto>>> GetUnlockedAsync(
+    Task<Result<List<AchievementDto>>> GetUnlockedAsync(
         string userId,
         CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Checks and awards achievements for a user (background job).
     /// </summary>
-    Task<Result<List<BadgeDto>>> CheckAndAwardAsync(
+    Task<Result<List<AchievementDto>>> CheckAndAwardAsync(
         string userId,
         CancellationToken cancellationToken = default);
 
